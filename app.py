@@ -36,5 +36,5 @@ for char in password_list:
     password += char
 print(f"Your password is: {password}")
 
-# Note this needs to be called thru the vscode terminal due to docker issues with interactive setup
+# Note this needs to be called thru the vscode terminal due to docker issues with interactive setup. Otherwise you will get EOF errors at the imput prompts.
 # docker run -it --rm -v ${PWD}:/app passwordgenerator:latest ls /app
