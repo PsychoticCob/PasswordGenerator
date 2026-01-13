@@ -1,0 +1,33 @@
+{
+       "configurations": [
+        {
+            "name": "Containers: Python - General",
+            "type": "docker",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "preLaunchTask": "docker-run: debug",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/app"
+                    }
+                ],
+                "projectType": "general"
+            },
+            "dockerOptions": {
+                "containerName": "python-debug",
+                "remove": true,
+                "volumes": [
+                    {
+                        "localPath": "${workspaceFolder}",
+                        "containerPath": "/app"
+                    }
+                ]
+            },
+            "containerOptions": ["-i", "-t"]
+        }
+    ]
+}
